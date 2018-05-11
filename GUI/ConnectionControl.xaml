@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="WpfApp1.ConnectionControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp1"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <StackPanel Background="#eee">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Margin="20">
+                <TextBlock Text="IP Address" FontSize="16" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Center" />
+                <TextBox x:Name="ipAddress"  Padding="2" Height="25" Background="#FFF"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Margin="10">
+                <TextBlock Text="Port Number" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center" />
+                <TextBox x:Name="portName" Padding="2" Height="25" Background="#FFF"/>
+            </StackPanel>
+            <Button x:Name="ConnectButton" FontWeight="UltraBlack" Click="connection_click" Width="80" Grid.Column="0" Content="Connect" Height="25" FontSize="16" Grid.Row="2"/>
+            <TextBlock Background="#fff" x:Name="connectMessage" Grid.Row="3" Margin="20" Height="60"/>
+        </Grid>
+        
+    </StackPanel>
+
+</UserControl>

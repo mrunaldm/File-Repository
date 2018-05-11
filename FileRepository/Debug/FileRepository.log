@@ -1,0 +1,2 @@
+﻿FileRepository.obj : error LNK2001: unresolved external symbol "public: static class NoSqlDb::DbCore<class NoSqlDb::PayLoad> FileRepository::database_" (?database_@FileRepository@@2V?$DbCore@VPayLoad@NoSqlDb@@@NoSqlDb@@A)
+C:\Users\Mrunal\Desktop\Project4Demo\Debug\FileRepository.exe : fatal error LNK1120: 1 unresolved externals

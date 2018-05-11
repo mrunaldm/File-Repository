@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="WpfApp1.CheckInControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp1"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="800">
+    <Grid>
+        <StackPanel Background="#eee">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label Margin ="10" FontWeight="UltraBold" Content="Namespace :" Grid.Row="0" Grid.Column="0"></Label>
+                <TextBox Margin="2 2 5 0" Padding="2 2 2 0" Name="nameSpaceValue" Height="25" Grid.Row="0" Grid.Column="1"></TextBox>
+                <Label Grid.Row="1" Grid.Column="0" Content="Description :" FontWeight="UltraBold" Margin="10 5 5 10"></Label>
+                <TextBox Margin="2 2 5 0" Padding="2 2 2 0" Name="descriptionValue" Height="25" Grid.Row="1" Grid.Column="1"></TextBox>
+                <Label Margin="10 5 5 10" Content="File Category :" FontWeight="UltraBold" Grid.Row="2" Grid.Column="0"></Label>
+                <Button Margin="5" Padding="5" Click="Refresh_Click" Content="Refresh" Grid.Row="2" Grid.Column="2" FontWeight="Bold"/>
+                <TextBox Margin="2 2 5 0" Padding="2 2 2 0" x:Name="CategoryValue" Height="25" Grid.Row="2" Grid.Column="1"></TextBox>
+                <StackPanel Grid.Row="0" Grid.Column="2">
+                    <Label FontWeight="UltraBold" Margin=" 10 5 5 10" Content="Check-in status"></Label>
+                    <ComboBox Name="checkInStatusSelected" Margin="1 1 10 1" SelectedIndex="0">
+                        <ComboBoxItem Tag="Open" Content="Open"></ComboBoxItem>
+                        <ComboBoxItem Tag="Closed" Content="Closed"></ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel  Grid.Row="0" Grid.Column="0">
+                    <Label FontWeight="UltraBlack" Content="Add Dependancy" Grid.Row="0" Grid.Column="1"/>
+                    <CheckBox x:Name="checkBoxDependancy" Background="#fff" Checked="checkBoxDependancy_Checked" Grid.Row="0" Grid.Column="0"/>
+                </StackPanel>
+                <Label Margin ="10 5 5 0" FontWeight="UltraBold" Content="Namespace :" Grid.Row="1" Grid.Column="0"></Label>
+                <TextBox IsEnabled="False" Background="#fff" Margin="2 2 5 0" Padding="2 2 2 0" Name="DependantnameSpaceValue" Height="25" Grid.Row="1" Grid.Column="1"></TextBox>
+
+                <Label Margin ="10 5 5 10" FontWeight="UltraBold" Content="Filename :" Grid.Row="2" Grid.Column="0"></Label>
+                <TextBox IsEnabled="False" Background="#fff" Margin="2 2 5 0" Padding="2 2 2 0" Name="DependantfileNameValue" Height="25" Grid.Row="2" Grid.Column="1"></TextBox>
+                <Label Grid.Row="3" Grid.Column="0" Content="Version :" FontWeight="UltraBold" Margin="10 5 5 10"></Label>
+                <TextBox IsEnabled="False" Background="#fff" Margin="2 2 5 0" Padding="2 2 2 0" Name="dependantVersion" Height="25" Grid.Row="3" Grid.Column="1"></TextBox>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Content="Local Directories" Margin="2 2 2 2" Padding="2 2 2 2" FontWeight="Bold" ></Label>
+                <Label Grid.Row="0" Grid.Column="1" Content="Local Files" Margin="2 2 2 2" Padding="2 2 2 2" FontWeight="Bold" ></Label>
+                <ListBox Grid.Row="1" Grid.Column="0" x:Name="DirList" Background="#fff" Margin="2 2 2 2" Padding="2 2 2 2" MouseDoubleClick="DirList_MouseDoubleClick"></ListBox>
+                <ListBox Grid.Row="1" Grid.Column="1" x:Name="FileList" Background="#fff" Margin="2 2 2 2" Padding="2 2 2 2"></ListBox>
+                <Label Grid.Row="2" Grid.Column="0" FontWeight="UltraBold" Content="Path :" Margin="2 2 2 2" Padding="2 2 2 2"/>
+                <TextBlock x:Name="PathTextBlock" Background="#fff" Grid.Row="2" Grid.Column="1" Margin="2 2 2 2" Padding="2 2 2 2"/>
+            </Grid>
+            <Button Content="CheckIn" Click="CheckIn_Click" HorizontalAlignment="Center" Height="30" Width="100" Margin="5" FontWeight="Bold"/>
+            <TextBlock x:Name="ServerMessage" Background="#fff" Margin="2"/>
+            <TextBlock x:Name="validationMessage" Margin="1"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

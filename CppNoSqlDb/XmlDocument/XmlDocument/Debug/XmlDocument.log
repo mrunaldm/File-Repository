@@ -1,0 +1,8 @@
+﻿cl : Command line warning D9002: ignoring unknown option '/ignore:4099'
+  XmlDocument.cpp
+  XmlParser.cpp
+  XmlElement.cpp
+  xmlElementParts.cpp
+  Tokenizer.cpp
+  Generating Code...
+  XmlDocument.vcxproj -> C:\Users\Mrunal\Desktop\Project4Demo\Debug\XmlDocument.lib
